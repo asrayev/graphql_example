@@ -6,6 +6,7 @@ const getCountries = '''
     capital
     emoji
     currency
+    code
     }
   }
 ''';

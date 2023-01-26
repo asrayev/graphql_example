@@ -7,8 +7,9 @@ class CountryModel {
     required this.currency,
     required this.emoji,
     required this.native,
+    required this.code
   });
-
+  final String code;
   final String name;
   final String native;
   final String capital;
@@ -21,5 +22,7 @@ class CountryModel {
     capital: json['capital'] as String? ?? "",
     emoji: json['emoji'] as String? ?? "",
     currency: json['currency'] as String? ?? "",
+    code: json['code'] as String? ?? "",
+
   );
 }
