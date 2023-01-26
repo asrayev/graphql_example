@@ -16,12 +16,22 @@ class HomePage extends StatelessWidget {
             return const CircularProgressIndicator();
           }
           if (state is CountryLoadSuccess){
-            return const Text("Success");
+            return Container(
+              height: MediaQuery.of(context).size.height,
+              child: ListView.builder(
+                  itemCount: state.countries.length,
+                  itemBuilder: (context, index){
+                    return Text("${state.countries[index].name}");
+
+              }),
+            );
           }
           if (state is CountryLoadFailure){
             return const Text("Fail");
           }
-          else return Text("Bilmadim");
+          else {
+            return const Text("Bilmadim");
+          }
 
 
      }
